@@ -2,7 +2,6 @@ package com.sirketismi.network.di
 
 import com.google.gson.Gson
 import com.sirketismi.network.api.ApiService
-import com.sirketismi.network.api.CampaignService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -60,42 +59,11 @@ object DataLayerModule {
         return client.build()
     }
 
-    @Provides
-    @Singleton
-    @CampaignAnnotation
-    fun provideCampignApiClient(gson: Gson, @CampaignAnnotation client: OkHttpClient): Retrofit {
-        return Retrofit.Builder()
-            .baseUrl("https://65a7624794c2c5762da692dd.mockapi.io/api/v5/")
-            .addConverterFactory(GsonConverterFactory.create(gson))
-            .client(client)
-            .build()
-    }
 
-    @Provides
-    @Singleton
-    fun provideCampaignService(@CampaignAnnotation retrofit: Retrofit) : CampaignService {
-        return retrofit.create(CampaignService::class.java)
-    }
 
-    @Provides
-    @Singleton
-    @CampaignAnnotation
-    fun provideCampaignOkHttpsClient(): OkHttpClient {
-        val client = OkHttpClient.Builder()
 
-        client
-            .connectTimeout(60, TimeUnit.SECONDS)
-            .readTimeout(60, TimeUnit.SECONDS)
-            .writeTimeout(60, TimeUnit.SECONDS)
-
-        return client.build()
-    }
 }
 
 @Qualifier
 @Retention(AnnotationRetention.RUNTIME)
 annotation class FlightAnnotation
-
-@Qualifier
-@Retention(AnnotationRetention.RUNTIME)
-annotation class CampaignAnnotation

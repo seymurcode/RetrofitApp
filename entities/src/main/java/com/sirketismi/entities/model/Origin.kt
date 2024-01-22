@@ -1,5 +1,9 @@
 package com.sirketismi.entities.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Origin(
     val airport_name: String,
     val city_name: String,
@@ -9,4 +13,4 @@ data class Origin(
     val is_city: Boolean,
     val label: String,
     val slug: String
-)
+): Parcelable

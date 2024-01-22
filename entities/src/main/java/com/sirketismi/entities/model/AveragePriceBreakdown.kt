@@ -1,6 +1,10 @@
 package com.sirketismi.entities.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
+
+@Parcelize
 data class AveragePriceBreakdown(
     val base: Int,
     val currency: String,
@@ -13,4 +17,4 @@ data class AveragePriceBreakdown(
     val service: Double,
     val tax: Int,
     val total: Double
-)
+): Parcelable

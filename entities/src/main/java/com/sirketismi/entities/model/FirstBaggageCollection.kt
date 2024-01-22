@@ -1,5 +1,9 @@
 package com.sirketismi.entities.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class FirstBaggageCollection(
     val allowance: Int,
     val part: Int,
@@ -7,4 +11,4 @@ data class FirstBaggageCollection(
     val small: Boolean,
     val type: String,
     val unit: String
-)
+): Parcelable

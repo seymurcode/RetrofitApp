@@ -1,8 +1,12 @@
 package com.sirketismi.entities.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Airline(
-    val code: String,
-    val image: String,
-    val name: String,
-    val slug: String
-)
+    val code: String?,
+    val image: String?,
+    val name: String?,
+    val slug: String?
+) : Parcelable

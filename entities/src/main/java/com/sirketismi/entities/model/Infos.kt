@@ -1,7 +1,11 @@
 package com.sirketismi.entities.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Infos(
-    val active_warning: Any,
+    val active_warning: String,
     val baggage_info: BaggageInfo,
     val duration: Duration,
     val is_business: Boolean,
@@ -9,4 +13,4 @@ data class Infos(
     val is_promo: Boolean,
     val is_reservable: Boolean,
     val is_virtual_interlining: Boolean
-)
+): Parcelable

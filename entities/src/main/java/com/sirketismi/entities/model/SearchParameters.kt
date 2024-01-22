@@ -1,5 +1,9 @@
 package com.sirketismi.entities.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class SearchParameters(
     val adult: Int,
     val child: Int,
@@ -9,7 +13,7 @@ data class SearchParameters(
     val destinations: List<Destination>,
     val display_departure_date: String,
     val display_departure_dates: List<String>,
-    val display_return_date: Any,
+    val display_return_date: String,
     val flight_class: String,
     val infant: Int,
     val is_direct: Boolean,
@@ -20,10 +24,10 @@ data class SearchParameters(
     val origins: List<Origin>,
     val passenger_count: Int,
     val passenger_servisable_count: Int,
-    val provider: Any,
+    val provider: String,
     val request_id: String,
-    val return_date: Any,
+    val return_date: String,
     val senior: Int,
     val student: Int,
     val version: Int
-)
+): Parcelable

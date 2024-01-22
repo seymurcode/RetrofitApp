@@ -1,5 +1,9 @@
 package com.sirketismi.entities.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Currencies(
     val AED: String,
     val ARS: String,
@@ -54,4 +58,4 @@ data class Currencies(
     val TRY: String,
     val TWD: String,
     val USD: String
-)
+) : Parcelable
